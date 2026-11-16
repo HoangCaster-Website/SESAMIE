@@ -7,12 +7,9 @@
   <title>SESAMIE | Bestellen</title>
   <meta name="description"
     content="SESAMIE Online-Bestellung. Alle Gerichte fur die Vorbestellung auf einer separaten, klaren Bestellseite." />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet" />
+  <script src="./assets/vendor/tailwind-3.4.17.js"></script>
+  <link rel="stylesheet" href="./assets/css/fonts.css" />
+  <link rel="stylesheet" href="./assets/css/privacy.css" />
   <link href="./assets/css/style.css" rel="stylesheet" />
 </head>
 
@@ -100,6 +97,14 @@
     </section>
   </main>
 
+  <footer class="legal-footer">
+    <nav class="legal-nav" aria-label="Rechtliche Informationen">
+      <a href="./impressum.html">Impressum</a>
+      <a href="./datenschutz.html">Datenschutzerklärung</a>
+      <button type="button" data-cookie-settings hidden>Cookie-Einstellungen</button>
+    </nav>
+  </footer>
+
   <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
   <aside class="cart-drawer" id="order-cart-drawer" data-cart-drawer aria-hidden="true" role="dialog" aria-modal="true"
     aria-labelledby="order-cart-title">
@@ -176,6 +181,7 @@
   <div class="toast" data-toast hidden></div>
 
   <script type="module" src="./assets/js/app.js"></script>
+  <script type="module" src="./assets/js/privacy.js"></script>
 </body>
 
 </html>

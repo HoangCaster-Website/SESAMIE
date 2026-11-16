@@ -7,12 +7,9 @@
     <title>SESAMIE | Asia Kitchen & Sushi</title>
     <meta content="Modern Asian Kitchen & Sushi in Ingolstadt. Speisekarte, Reservierung und Online-Bestellung."
         name="description" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+    <script src="./assets/vendor/tailwind-3.4.17.js"></script>
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" href="./assets/css/privacy.css" />
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -431,11 +428,13 @@
                                     data-i18n="contact.location">Standort</h2>
                                 <div class="space-y-6">
                                     <div class="space-y-4">
-                                        <div
-                                            class="overflow-hidden border border-outline-variant/30 bg-surface-container-low">
-                                            <iframe class="block w-full h-[260px]" data-map-frame src="" loading="lazy"
-                                                referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-                                                title="SESAMIE map"></iframe>
+                                        <div class="site-map" data-site-map>
+                                            <div class="site-map__placeholder" data-map-placeholder>
+                                                <p data-privacy-copy="mapPlaceholder">Die Karte von Google Maps wird erst nach Ihrer Einwilligung geladen.</p>
+                                                <button class="privacy-button" type="button" data-cookie-settings hidden>
+                                                    Cookie-Einstellungen
+                                                </button>
+                                            </div>
                                         </div>
                                         <p class="font-body-md text-on-surface-variant" data-business="address"></p>
                                     </div>
@@ -539,6 +538,11 @@
                 </address>
             </div>
         </div>
+        <nav class="legal-nav legal-nav--home" aria-label="Rechtliche Informationen">
+            <a href="./impressum.html">Impressum</a>
+            <a href="./datenschutz.html">Datenschutzerklärung</a>
+            <button type="button" data-cookie-settings hidden>Cookie-Einstellungen</button>
+        </nav>
     </footer>
 
     <div class="book-backdrop" data-book-backdrop hidden></div>
@@ -583,8 +587,9 @@
 
     <div class="toast" data-toast hidden></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    <script src="./assets/vendor/page-flip-2.0.7.js"></script>
     <script src="./assets/js/app.js" type="module"></script>
+    <script src="./assets/js/privacy.js" type="module"></script>
 </body>
 
 </html>

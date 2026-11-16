@@ -34,7 +34,6 @@ const elements = {
   tabPanels: document.querySelectorAll(".tab-content"),
   businessFields: document.querySelectorAll("[data-business]"),
   hoursLists: document.querySelectorAll("[data-business-hours]"),
-  mapFrame: document.querySelector("[data-map-frame]"),
   mapLinks: document.querySelectorAll('[data-business-link="map"]'),
   phoneLinks: document.querySelectorAll('[data-business-link="phone"]'),
   emailLinks: document.querySelectorAll('[data-business-link="email"]'),
@@ -87,7 +86,7 @@ const CASH_DISCOUNT_RATE = 0.1;
 function loadAnime() {
   if (prefersReducedMotion) return Promise.resolve(null);
   if (!animeReady) {
-    animeReady = import("https://cdn.jsdelivr.net/npm/animejs/+esm")
+    animeReady = import("../vendor/anime-4.5.0.js")
       .then((module) => module?.default ?? module?.anime ?? null)
       .catch(() => null);
   }
@@ -310,9 +309,6 @@ function applyTranslations() {
   elements.emailLinks.forEach((node) => {
     node.href = `mailto:${BUSINESS.email}`;
   });
-  if (elements.mapFrame) {
-    elements.mapFrame.src = BUSINESS.mapEmbedUrl;
-  }
 }
 
 async function loadMenu(language) {
